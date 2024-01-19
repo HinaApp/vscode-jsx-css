@@ -1,0 +1,54 @@
+{
+  "name": "vscode-jsx-css",
+  "displayName": "vscode-jsx-css",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "repository": "https://github.com/HinaApp/vscode-jsx-css",
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.ts.tsx",
+          "source.tsx"
+        ],
+        "scopeName": "jsx.css",
+        "path": "./syntaxes/jsx.css.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "css",
+          "meta.template.expression.ts": "typescript"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.3",
+    "vscode-languageserver-types": "^3.17.5"
+  },
+  "dependencies": {
+    "@vscode/emmet-helper": "^2.9.2",
+    "vscode-css-languageservice": "^6.2.12",
+    "vscode-html-languageservice": "^5.1.2"
+  },
+  "activationEvents": [
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./client/main",
+  "scripts": {
+    "compile": "npx tsc -p .",
+    "watch:compile": "npx tsc --watch -p .",
+    "package": "npx vsce package"
+  }
+}
